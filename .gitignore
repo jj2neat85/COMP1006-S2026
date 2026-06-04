@@ -1,5 +1,6 @@
 # Config
 **/config.php
+**/db_config.php
 
 # IDE
 .vscode/
