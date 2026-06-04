@@ -1,0 +1,175 @@
+/* Base */
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  min-height: 100vh;
+  font-family: 'Segoe UI', system-ui, sans-serif;
+  background: linear-gradient(160deg, #1a237e 0%, #6172ee 40%, #1565c0 100%);
+  color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem 1rem;
+}
+
+/* Layout Container */
+.app-container {
+  width: 100%;
+  max-width: 420px;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+/* Search Form */
+.search-form {
+  display: flex;
+  gap: 0.5rem;
+}
+
+/* Shared styles for search input and button */
+.search-form input,
+.search-form button {
+  padding: 0.65rem 1.2rem;
+  border: none;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.15);
+  color: #fff;
+  font-size: 0.95rem;
+}
+
+.search-form input {
+  flex: 1;
+  outline: none;
+}
+
+.search-form input::placeholder {
+  color: rgba(255, 255, 255, 0.55);
+}
+
+/* Slightly brighten on hover/focus */
+.search-form input:focus,
+.search-form button:hover {
+  background: rgba(255, 255, 255, 0.25);
+}
+
+.search-form button {
+  cursor: pointer;
+}
+
+/* Error notice if a failure happens */
+.error-notice {
+  background: rgba(229, 57, 53, 0.25);
+  border: 1px solid rgba(229, 57, 53, 0.5);
+  border-radius: 12px;
+  padding: 0.75rem 1rem;
+  font-size: 0.9rem;
+  text-align: center;
+}
+
+/* Location header with icon*/
+.location-header {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-size: 1rem;
+  font-weight: 500;
+  opacity: 0.85;
+}
+
+.location-header svg {
+  width: 18px;
+  height: 18px;
+  fill: currentColor;
+  flex-shrink: 0;
+}
+
+/* Current weather conditions container */
+.current-weather {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+  padding: 0 0.25rem;
+}
+
+/* Large temperature display */
+.current-temp {
+  font-size: 5rem;
+  font-weight: 200;
+  line-height: 1;
+  letter-spacing: -2px;
+}
+
+/* Additional details below the main temperature */
+.current-details {
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+  font-size: 0.9rem;
+  opacity: 0.8;
+}
+
+/* Glass card style for forecast and other info sections */
+.glass-card {
+  background: rgba(255, 255, 255, 0.12);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  border-radius: 20px;
+  padding: 1rem 1.25rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+/* Summary text at the top of cards */
+.card-summary {
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  opacity: 0.6;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+  padding-bottom: 0.65rem;
+}
+
+
+/* Forecast strip container */
+.forecast-strip {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Individual day in the forecast strip */
+.forecast-day {
+  display: grid;
+  grid-template-columns: 2.5rem 2rem 1fr auto;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.45rem 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.forecast-day:last-child {
+  border-bottom: none;
+}
+
+.forecast-day__label { font-size: 0.9rem; font-weight: 500; }
+
+.forecast-day__icon  { width: 28px; height: 28px; object-fit: contain; }
+
+/* Container for the high and low temperatures, aligned to the right */
+.forecast-day__temps {
+  display: flex;
+  justify-content: flex-end;
+  gap: 0.75rem;
+  font-size: 0.9rem;
+  grid-column: 4;
+}
+
+.forecast-day__hi { font-weight: 600; }
+.forecast-day__lo { opacity: 0.5; }
